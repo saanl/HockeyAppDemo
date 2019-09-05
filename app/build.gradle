@@ -11,6 +11,25 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    def jksDir = "./HockeyAppDemo.jks"
+
+    signingConfigs {
+        release {
+            storeFile file(jksDir)
+            storePassword "123456"
+            keyAlias "hockeyappdemo"
+            keyPassword "123456"
+            v2SigningEnabled false
+        }
+        debug{
+            storeFile file(jksDir)
+            storePassword "123456"
+            keyAlias "hockeyappdemo"
+            keyPassword "123456"
+            v2SigningEnabled false
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
