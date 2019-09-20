@@ -27,13 +27,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // initHockeyApp();
+       //initHockeyApp();
         initAppcenter();
     }
 
 
     private void initHockeyApp(){
-        CrashManager.register(this, "3e93fd413b1f43baa0ee2a98aeb4195a", new CrashManagerListener() {
+        CrashManager.register(this, "e2c15e61b7f3431189155a1a7fb955f5", new CrashManagerListener() {
             @Override
             public boolean shouldAutoUploadCrashes() {
                 return true;
