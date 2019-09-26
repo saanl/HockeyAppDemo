@@ -1,4 +1,4 @@
-package com.example.hockeyappdemo1;
+package com.example.hockeyappdemo;
 
 import android.content.Context;
 

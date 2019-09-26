@@ -16,14 +16,14 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Button"
+        android:text="crash"
         android:onClick="click"
         />
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Button"
+        android:text="Intent"
         android:onClick="click2"
         />
 

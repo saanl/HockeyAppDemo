@@ -1,4 +1,4 @@
-package com.example.hockeyappdemo1;
+package com.example.hockeyappdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +16,10 @@ import com.microsoft.appcenter.crashes.model.ErrorReport;
 
 import net.hockeyapp.android.CrashManager;
 import net.hockeyapp.android.CrashManagerListener;
+import net.hockeyapp.android.Tracking;
+import net.hockeyapp.android.metrics.MetricsManager;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
@@ -39,63 +42,20 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
     }
 
     private void initAppcenter(){
         AppCenter.setLogLevel(Log.VERBOSE);
-        AppCenter.start(getApplication(),"68ab6b39-7bda-406d-ba86-93547a642b5e", Crashes.class, Analytics.class);
-        Crashes.setListener(new CrashesListener() {
-            @Override
-            public boolean shouldProcess(ErrorReport report) {
-                return false;
-            }
-
-            @Override
-            public boolean shouldAwaitUserConfirmation() {
-                return false;
-            }
-
-            @Override
-            public Iterable<ErrorAttachmentLog> getErrorAttachments(ErrorReport report) {
-                return null;
-            }
-
-            @Override
-            public void onBeforeSending(ErrorReport report) {
-                Log.e("MYAPPCENTER",report.getDevice().getOemName());
-                Log.e("MYAPPCENTER",report.getDevice().getModel());
-            }
-
-            @Override
-            public void onSendingFailed(ErrorReport report, Exception e) {
-
-            }
-
-            @Override
-            public void onSendingSucceeded(ErrorReport report) {
-                Log.e("MYAPPCENTER",report.getDevice().getOemName());
-                Log.e("MYAPPCENTER",report.getDevice().getModel());
-            }
-        });
+        AppCenter.start(getApplication(),"839abbd6-ee35-4d0a-8635-62ff81fb4fd6", Crashes.class, Analytics.class);
+        Analytics.trackEvent("SDK INIT");
+        AppCenterTracking.startUsage(this);
     }
 
     public void click(View view){
 
-        String s = null;
-        String[] arr = {"",""};
-        int i = 0;
 
-        Random r = new Random();
-
-        if(r.nextInt(100) % 2 == 0){
-            Log.e("AAA",s.length()+"");
-        }else if(r.nextInt(100) % 3 == 0){
-            Log.e("AAA",arr[2]);
-        }else if(r.nextInt(100) % 5 == 0){
-            Log.e("AAA",999/i+"");
-        }else if(r.nextInt(100) % 7 == 0){
-            throw new RuntimeException("RuntimeException For Test:"+ new Date());
-        }
+        myerror();
 
     }
 
@@ -107,5 +67,19 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+    private void myerror(){
+        MyError.generateError();
+    }
+
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        AppCenterTracking.stopUsage(this);
+        Log.e("Test Tacking: ", AppCenterTracking.getUsageTime(getApplicationContext())+"" );
+    }
+
 
 }

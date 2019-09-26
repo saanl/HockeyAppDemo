@@ -4,33 +4,45 @@ android {
     compileSdkVersion 28
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.example.hockeyappdemo1"
+        applicationId "com.example.hockeyappdemo"
         minSdkVersion 24
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "3.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    def jksDir = "./HockeyAppDemo.jks"
+    //def jksDir = "./HockeyAppDemo.jks"
 
     signingConfigs {
-        release {
-            storeFile file(jksDir)
-            storePassword "123456"
-            keyAlias "hockeyappdemo"
-            keyPassword "123456"
-            v2SigningEnabled false
+//        release {
+//            storeFile file(jksDir)
+//            storePassword "123456"
+//            keyAlias "hockeyappdemo"
+//            keyPassword "123456"
+//            v2SigningEnabled false
+//        }
+        signingConfigs {
+            releaseSigningConfig {
+                storeFile rootProject.file("app/HockeyAppDemo.jks")
+                storePassword System.getenv("APPCENTER_KEYSTORE_PASSWORD")
+                keyAlias System.getenv("APPCENTER_KEY_ALIAS")
+                keyPassword System.getenv("APPCENTER_KEY_PASSWORD")
+            }
         }
-        debug{
-            storeFile file(jksDir)
-            storePassword "123456"
-            keyAlias "hockeyappdemo"
-            keyPassword "123456"
-            v2SigningEnabled false
-        }
+//        debug{
+//            storeFile file(jksDir)
+//            storePassword "123456"
+//            keyAlias "hockeyappdemo"
+//            keyPassword "123456"
+//            v2SigningEnabled false
+//        }
     }
     buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
