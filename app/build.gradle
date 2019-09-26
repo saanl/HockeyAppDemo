@@ -22,14 +22,12 @@ android {
 //            keyPassword "123456"
 //            v2SigningEnabled false
 //        }
-        signingConfigs {
             releaseSigningConfig {
                 storeFile rootProject.file("app/HockeyAppDemo.jks")
                 storePassword System.getenv("APPCENTER_KEYSTORE_PASSWORD")
                 keyAlias System.getenv("APPCENTER_KEY_ALIAS")
                 keyPassword System.getenv("APPCENTER_KEY_PASSWORD")
             }
-        }
 //        debug{
 //            storeFile file(jksDir)
 //            storePassword "123456"
