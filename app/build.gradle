@@ -7,14 +7,14 @@ android {
         applicationId "com.example.hockeyappdemo"
         minSdkVersion 24
         targetSdkVersion 28
-        versionCode 3
-        versionName "3.0"
+        versionCode 1
+        versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    //def jksDir = "./HockeyAppDemo.jks"
+    def jksDir = "./HockeyAppDemo.jks"
 
-    signingConfigs {
+//    signingConfigs {
 //        release {
 //            storeFile file(jksDir)
 //            storePassword "123456"
@@ -22,12 +22,12 @@ android {
 //            keyPassword "123456"
 //            v2SigningEnabled false
 //        }
-            release {
-                storeFile rootProject.file("app/HockeyAppDemo.jks")
-                storePassword System.getenv("APPCENTER_KEYSTORE_PASSWORD")
-                keyAlias System.getenv("APPCENTER_KEY_ALIAS")
-                keyPassword System.getenv("APPCENTER_KEY_PASSWORD")
-            }
+//            release {
+//                storeFile rootProject.file("app/HockeyAppDemo.jks")
+//                storePassword System.getenv("APPCENTER_KEYSTORE_PASSWORD")
+//                keyAlias System.getenv("APPCENTER_KEY_ALIAS")
+//                keyPassword System.getenv("APPCENTER_KEY_PASSWORD")
+//            }
 //        debug{
 //            storeFile file(jksDir)
 //            storePassword "123456"
@@ -35,7 +35,7 @@ android {
 //            keyPassword "123456"
 //            v2SigningEnabled false
 //        }
-    }
+//    }
     buildTypes {
         debug {
             minifyEnabled true
@@ -55,6 +55,7 @@ dependencies {
     def appCenterSdkVersion = '2.3.0'
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-distribute:${appCenterSdkVersion}"
     implementation 'net.hockeyapp.android:HockeySDK:5.2.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'

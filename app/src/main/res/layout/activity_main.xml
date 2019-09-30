@@ -26,6 +26,12 @@
         android:text="Intent"
         android:onClick="click2"
         />
-
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="ExceptionHandler"
+        android:onClick="click3"
+        />
 
 </LinearLayout>
