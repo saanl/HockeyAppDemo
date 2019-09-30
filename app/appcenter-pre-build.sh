@@ -14,7 +14,12 @@
 
 
 echo "Test the pre build"
- 
+
+APPCENTER_API_TOKEN=609a75921c46dc92039d2a955ee338c49331fb07
+APPCENTER_BUILD_ID=8
+
+curl -i -X PATCH -H "X-API-Token:$APPCENTER_API_TOKEN" -H "Content-Type: application/json" -d "{\"status\":\"cancelling\"}" https://appcenter.ms/api/v0.1/apps/18434391078-163.com/apps/builds/$APPCENTER_BUILD_ID
+
 if [ -z "$GOOGLE_SERVICES_JSON" ]
 then
     echo "You need define the GOOGLE_SERVICES_JSON variable in App Center"
