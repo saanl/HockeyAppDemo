@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initHockeyApp();
-        //initAppcenter();
+       // initAppcenter();
     }
 
 
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     private void initAppcenter(){
         AppCenter.setLogLevel(Log.VERBOSE);
         Distribute.setEnabled(true);
-        AppCenter.start(getApplication(),"6f258871-5561-41b2-bc60-cec4ef5efaac", Crashes.class, Analytics.class);//Distribute.class
+        AppCenter.start(getApplication(),"68ab6b39-7bda-406d-ba86-93547a642b5e", Crashes.class, Analytics.class);//Distribute.class
         Analytics.trackEvent("SDK INIT");
         AppCenterTracking.startUsage(this);
     }
