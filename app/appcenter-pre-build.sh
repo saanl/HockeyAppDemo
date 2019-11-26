@@ -23,6 +23,8 @@
 
 echo "show the strings: "
 
+eho $APPCENTER_ANDROID_VARIANT
+
 echo $str1
 
 echo $str2
