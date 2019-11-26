@@ -13,13 +13,29 @@
 # TO THE CONTENTS OF YOUR google-services.json FILE
 
 
-echo "Test the pre build - Start"
+#echo "Test the pre build - Start"
 
-APPCENTER_API_TOKEN=609a75921c46dc92039d2a955ee338c49331fb07
+#APPCENTER_API_TOKEN=609a75921c46dc92039d2a955ee338c49331fb07
 
-curl -i -X PATCH -H "X-API-Token:$APPCENTER_API_TOKEN" -H "Content-Type: application/json" -d "{\"status\":\"cancelling\"}" https://appcenter.ms/api/v0.1/apps/18434391078-163.com/HockeyApp1/builds/$APPCENTER_BUILD_ID
+#curl -i -X PATCH -H "X-API-Token:$APPCENTER_API_TOKEN" -H "Content-Type: application/json" -d "{\"status\":\"cancelling\"}" https://appcenter.ms/api/v0.1/apps/18434391078-163.com/HockeyApp1/builds/$APPCENTER_BUILD_ID
 
-echo "Test the pre build - End"
+#echo "Test the pre build - End"
+
+echo "show the strings: "
+
+echo $str1
+
+echo $str2
+
+echo $str3
+
+if [ -z "$str4" ]
+then
+
+	curl -i -X PATCH -H "X-API-Token:$APPCENTER_API_TOKEN" -H "Content-Type: application/json" -d "{\"status\":\"cancelling\"}" https://appcenter.ms/api/v0.1/apps/18434391078-163.com/HockeyApp1/builds/$APPCENTER_BUILD_ID	
+	exit
+fi
+
 
 if [ -z "$GOOGLE_SERVICES_JSON" ]
 then
