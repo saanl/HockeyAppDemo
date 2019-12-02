@@ -13,7 +13,7 @@
 # TO THE CONTENTS OF YOUR google-services.json FILE
 
 
-echo "Test the pre build - Start"
+echo "My Test Start"
 
 #APPCENTER_API_TOKEN=609a75921c46dc92039d2a955ee338c49331fb07
 
