@@ -19,3 +19,5 @@ echo "POST CLONE"
 echo "POST CLONE"
 echo "POST CLONE"
 echo "POST CLONE"
+
+Env myTest="from post clone step"

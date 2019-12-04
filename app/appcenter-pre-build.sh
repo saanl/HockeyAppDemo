@@ -12,6 +12,12 @@
 # DECLARE THE GOOGLE_SERVICES_JSON ENVIRONMENT VARIABLE IN APP CENTER BUILD CONFIGURATION, SET
 # TO THE CONTENTS OF YOUR google-services.json FILE
 
+echo "#####################################################"
+
+echo $myTest
+
+echo "#####################################################"
+
 
 echo "My Test Start"
 
