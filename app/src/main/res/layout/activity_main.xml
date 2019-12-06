@@ -8,9 +8,21 @@
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
+
+    <TextView
+        android:id="@+id/my_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/mytx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="###" />
 
     <Button
         android:id="@+id/button"
@@ -32,6 +44,13 @@
         android:layout_height="50dp"
         android:text="ExceptionHandler"
         android:onClick="click3"
+        />
+    <Button
+        android:id="@+id/click4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="ExceptionHandler"
+        android:onClick="click4"
         />
 
 </LinearLayout>
