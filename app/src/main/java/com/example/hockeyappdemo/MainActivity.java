@@ -55,11 +55,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tx = findViewById(R.id.mytx);
         my_app = findViewById(R.id.my_app);
-        my_app.setText("build.config"+ BuildConfig.VERSION_CODE+" "+BuildConfig.VERSION_NAME);
+        my_app.setText("build.config "+ BuildConfig.VERSION_CODE+" "+BuildConfig.VERSION_NAME);
         PackageInfo packageInfo = getName();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            tx.setText("package info"+packageInfo.getLongVersionCode()+" "+packageInfo.versionName);
-        }
+        tx.setText("package info "+packageInfo.versionCode+" "+packageInfo.versionName);
+        //long longVersionCode = packageInfo.;
         initHockeyApp();
       // initAppcenter();
     }
