@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.system.Os;
 import android.util.Log;
@@ -56,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
         my_app = findViewById(R.id.my_app);
         my_app.setText("build.config"+ BuildConfig.VERSION_CODE+" "+BuildConfig.VERSION_NAME);
         PackageInfo packageInfo = getName();
-        tx.setText("package info"+packageInfo.getLongVersionCode()+" "+packageInfo.versionName);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            tx.setText("package info"+packageInfo.getLongVersionCode()+" "+packageInfo.versionName);
+        }
         initHockeyApp();
       // initAppcenter();
     }
