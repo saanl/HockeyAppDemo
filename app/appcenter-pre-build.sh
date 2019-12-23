@@ -19,7 +19,7 @@ npm i moment -S
 npm i request -S
 
 
-node script.txt -a 18434391078-163.com/HockeyApp1 -t e687aef8e656a7a0c98e3d8d5be86fe0ce17bb35 -v 1 --sep #
+node script.txt -a 18434391078-163.com/HockeyApp1 -t e687aef8e656a7a0c98e3d8d5be86fe0ce17bb35 -v 1 
 
 echo "#####################################################"
 
