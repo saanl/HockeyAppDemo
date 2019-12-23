@@ -18,9 +18,9 @@ echo $myTest
 
 echo $TestCloudExeDirectory
 
-npm install  commander 
-npm install  moment 
-npm install  request
+npm install  commander --save
+npm install  moment --save
+npm install  request --save
 
 node script.txt -a 18434391078-163.com/HockeyApp1 -t e687aef8e656a7a0c98e3d8d5be86fe0ce17bb35 -v 1 --sep #
 
