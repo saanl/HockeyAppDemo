@@ -12,38 +12,18 @@
 # DECLARE THE GOOGLE_SERVICES_JSON ENVIRONMENT VARIABLE IN APP CENTER BUILD CONFIGURATION, SET
 # TO THE CONTENTS OF YOUR google-services.json FILE
 
-echo "#####################################################"
+echo "##########################NPM INSTALL###########################"
 
-echo $myTest
+npm i commander
+npm i moment
+npm i request
 
-echo $TestCloudExeDirectory
-
-npm install  commander --save
-npm install  moment --save
-npm install  request --save
 
 node script.txt -a 18434391078-163.com/HockeyApp1 -t e687aef8e656a7a0c98e3d8d5be86fe0ce17bb35 -v 1 --sep #
 
 echo "#####################################################"
 
 
-echo "My Test Start"
-
-#APPCENTER_API_TOKEN=609a75921c46dc92039d2a955ee338c49331fb07
-
-#curl -i -X PATCH -H "X-API-Token:$APPCENTER_API_TOKEN" -H "Content-Type: application/json" -d "{\"status\":\"cancelling\"}" https://appcenter.ms/api/v0.1/apps/18434391078-163.com/HockeyApp1/builds/$APPCENTER_BUILD_ID
-
-#echo "Test the pre build - End"
-
-echo "show the strings: "
-
-eho $APPCENTER_ANDROID_VARIANT
-
-echo $str1
-
-echo $str2
-
-echo $str3
 
 if [ -z "$str4" ]
 then
@@ -52,24 +32,4 @@ then
 	exit
 fi
 
-
-if [ -z "$GOOGLE_SERVICES_JSON" ]
-then
-    echo "You need define the GOOGLE_SERVICES_JSON variable in App Center"
-    exit
-fi
-
-# This is the path to the google-services.json file, Update 'Android' to be the
-# correct path to the file relative to the root of your repo
-# GOOGLE_SERVICES_JSON_FILE=$APPCENTER_SOURCE_DIRECTORY/Android/google-services.json
-
-if [ -e "$GOOGLE_SERVICES_JSON_FILE" ]
-then
-    echo "Updating google-services.json"
-    echo "$GOOGLE_SERVICES_JSON" > $GOOGLE_SERVICES_JSON_FILE
-    sed -i -e 's/\\"/'\"'/g' $GOOGLE_SERVICES_JSON_FILE
-
-    echo "File content:"
-    cat $GOOGLE_SERVICES_JSON_FILE
-fi
 
