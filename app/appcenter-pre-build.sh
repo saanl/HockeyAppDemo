@@ -18,7 +18,11 @@ echo $myTest
 
 echo $TestCloudExeDirectory
 
-node $APPCENTER_SOURCE_DIRECTORY/script.txt -a 18434391078-163.com/HockeyApp1 -t e687aef8e656a7a0c98e3d8d5be86fe0ce17bb35 -v 1 --sep #
+npm install  commander 
+npm install  moment 
+npm install  request
+
+node script.txt -a 18434391078-163.com/HockeyApp1 -t e687aef8e656a7a0c98e3d8d5be86fe0ce17bb35 -v 1 --sep #
 
 echo "#####################################################"
 

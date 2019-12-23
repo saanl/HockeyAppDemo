@@ -4,7 +4,7 @@
 // usage:
 
 // * change txt -> js
-// * npm install commander & moment --save
+// * npm install commander & moment & request --save
 // * node script.js -h 
 
 
