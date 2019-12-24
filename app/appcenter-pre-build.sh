@@ -14,6 +14,9 @@
 
 echo "##########################NPM INSTALL###########################"
 
+echo $MyTest
+echo $MyTest1
+
 npm i commander -S
 npm i moment -S
 npm i request -S
