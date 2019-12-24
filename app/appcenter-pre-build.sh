@@ -14,8 +14,15 @@
 
 echo "##########################NPM INSTALL###########################"
 
-echo $MyTest
+echo $str100
+
 echo $MyTest1
+
+echo $APPCENTER_ACCESS_TOKEN
+
+echo $APPCENTER_ACCESS_TOKEN1
+
+echo $str101
 
 npm i commander -S
 npm i moment -S
