@@ -15,7 +15,7 @@
 
 echo "Test the pre build - Start"
 
-echo $APPCENTER_SOURCE_DIRECTORY/app
+echo "$APPCENTER_SOURCE_DIRECTORY/app"
 
 ls $APPCENTER_SOURCE_DIRECTORY
 
