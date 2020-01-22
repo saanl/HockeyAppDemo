@@ -15,3 +15,5 @@
 
 echo "Test the pre build - Start"
 
+node node_modules/jetifier/bin/jetify
+
