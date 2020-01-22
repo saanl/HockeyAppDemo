@@ -20,5 +20,5 @@ echo "$APPCENTER_SOURCE_DIRECTORY/app"
 ls $APPCENTER_SOURCE_DIRECTORY
 
 
-node node_modules/jetifier/bin/jetify
+# node node_modules/jetifier/bin/jetify
 
