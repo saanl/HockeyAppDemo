@@ -15,13 +15,7 @@ android {
     def jksDir = "./HockeyAppDemo.jks"
 
    signingConfigs {
-//            release {
-//                storeFile file(jksDir)
-//                storePassword "123456"
-//                keyAlias "hockeyappdemo"
-//                keyPassword "123456"
-//                v2SigningEnabled false
-//            }
+
            release {
                storeFile rootProject.file("app/HockeyAppDemo.jks")
                storePassword System.getenv("APPCENTER_KEYSTORE_PASSWORD")
